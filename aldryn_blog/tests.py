@@ -49,7 +49,7 @@ class PostAddTest(TestCase):
         """
         We'll create a Post with a future start & end and check if it is shown
         """
-        title = 'Future Blog Post'
+        title = 'Future News Post'
         date = timezone.now()
 
         post = Post.objects.create(
@@ -65,7 +65,7 @@ class PostAddTest(TestCase):
         """
         We'll create an Post with a past end and check if it isn't shown
         """
-        title = 'Past Blog Post'
+        title = 'Past News Post'
         date = timezone.now() - timezone.timedelta(minutes=1)
 
         post = Post.objects.create(
@@ -125,7 +125,7 @@ class PostAddTest(TestCase):
         if the wrong language is set in the url we should get a redirect to the main homepage
         """
 
-        title = 'French Blog Post'
+        title = 'French News Post'
 
         post = Post.objects.create(
             title=title, slug='french-post',

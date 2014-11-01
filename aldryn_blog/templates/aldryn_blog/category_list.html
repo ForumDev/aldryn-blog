@@ -4,7 +4,7 @@
 
 {% block content_blog %}
 <div class="blog-list">
-    {% block blog_title %}<h2>{% trans "Blog Categories" %}</h2>{% endblock %}
+    {% block blog_title %}<h2>{% trans "News Categories" %}</h2>{% endblock %}
     <ul class="blog-categories">
         {% for category in object_list %}
         <li><a href="{% url 'aldryn_blog:category-posts' category=category.slug %}" class="blog-category-{{ category.count }}">{{ category.name }} <span>({{ category.count }})</span></a></li>

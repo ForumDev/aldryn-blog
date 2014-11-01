@@ -16,7 +16,7 @@ class LatestEntriesFeed(Feed):
         return reverse('aldryn_blog:latest-posts')
 
     def title(self):
-        return _('Blog posts on %(site_name)s') % {'site_name': Site.objects.get_current().name}
+        return _('News posts on %(site_name)s') % {'site_name': Site.objects.get_current().name}
 
     def items(self, obj):
         language = get_language()

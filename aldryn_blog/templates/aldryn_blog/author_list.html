@@ -4,7 +4,7 @@
 
 {% block content_blog %}
 <div class="blog-list">
-    {% block blog_title %}<h2>{% trans "Blog Authors" %}</h2>{% endblock %}
+    {% block blog_title %}<h2>{% trans "News Authors" %}</h2>{% endblock %}
     <ul class="blog-authors">
         {% for author in object_list %}
         <li><a href="{% url 'aldryn_blog:author-posts' author.slug %}">{{ author.get_full_name }} ({{ author.post_set.count }} articles)</a></li>

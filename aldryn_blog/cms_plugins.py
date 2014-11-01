@@ -11,13 +11,13 @@ from aldryn_blog.forms import LatestEntriesForm
 
 class BlogPlugin(CMSPluginBase):
 
-    module = 'Blog'
+    module = 'News'
 
 
 class LatestEntriesPlugin(BlogPlugin):
 
     render_template = 'aldryn_blog/plugins/latest_entries.html'
-    name = _('Latest Blog Entries')
+    name = _('Latest News Entries')
     model = models.LatestEntriesPlugin
     form = LatestEntriesForm
 
@@ -28,7 +28,7 @@ class LatestEntriesPlugin(BlogPlugin):
 
 class AuthorsPlugin(BlogPlugin):
     render_template = 'aldryn_blog/plugins/authors.html'
-    name = _('Blog Authors')
+    name = _('News Authors')
     model = models.AuthorsPlugin
     filter_horizontal = ['authors']
 
