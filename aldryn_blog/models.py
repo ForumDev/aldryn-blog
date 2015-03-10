@@ -24,7 +24,7 @@ from .conf import settings
 from .utils import generate_slugs, get_blog_authors, get_slug_for_user, get_slug_in_language
 
 
-AUTH_USER_MODEL = getattr(settings, 'AUTH_USER_MODEL', 'auth.User')
+AUTH_USER_MODEL = getattr(settings, 'AUTH_USER_MODEL', 'mymyauth.User')
 
 
 class CategoryManager(TranslationManager):

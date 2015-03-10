@@ -18,7 +18,7 @@ class Migration(SchemaMigration):
             ('title', self.gf('django.db.models.fields.CharField')(max_length=255)),
             ('slug', self.gf('django.db.models.fields.CharField')(unique=True, max_length=255, blank=True)),
             ('content', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['cms.Placeholder'], null=True)),
-            ('author', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['auth.User'])),
+            ('author', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['myauth.User'])),
             ('publication_date', self.gf('django.db.models.fields.DateField')(default=datetime.date.today)),
         ))
         db.send_create_signal('aldryn_blog', ['Post'])
@@ -59,7 +59,7 @@ class Migration(SchemaMigration):
         },
         'aldryn_blog.post': {
             'Meta': {'ordering': "['-publication_date']", 'object_name': 'Post'},
-            'author': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['auth.User']"}),
+            'author': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['myauth.User']"}),
             'content': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['cms.Placeholder']", 'null': 'True'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'publication_date': ('django.db.models.fields.DateField', [], {'default': 'datetime.date.today'}),
@@ -79,7 +79,7 @@ class Migration(SchemaMigration):
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '50'})
         },
-        'auth.user': {
+        'myauth.User': {
             'Meta': {'object_name': 'User'},
             'date_joined': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime.now'}),
             'email': ('django.db.models.fields.EmailField', [], {'max_length': '75', 'blank': 'True'}),
